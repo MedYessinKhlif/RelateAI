@@ -1,9 +1,8 @@
 import Chat from "../models/Chat.js";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import config from '../config/config.js';
 
-
-const apiKey = "AIzaSyDm6me4oiQzO1ok_x6OTPtDoipb78jMSS8";
-const genAI = new GoogleGenerativeAI(apiKey);
+const genAI = new GoogleGenerativeAI(config.googleApiKey);
 
 const model = genAI.getGenerativeModel({
   model: "gemini-2.0-flash-exp",
@@ -54,7 +53,7 @@ export const createChat = async (req, res) => {
       `Generate a short and creative title (1 to 5 words) for the following text: "${prompt}". Only provide the title, no explanation.`
     );
 
-    const successStoryPrompt = `Provide a success story of a celebrity who had the same problem or pain as described in the following text: "${prompt}". Explain how they overcame it.`;
+    const successStoryPrompt = `Provide a success story of a known celebrity or famous person who had the same problem or pain as described in the following text: "${prompt}". Explain how they overcame it.`;
     const successStoryResult = await chatSession.sendMessage(successStoryPrompt);
 
     const chat = new Chat({
@@ -62,7 +61,7 @@ export const createChat = async (req, res) => {
       title: titleResult.response.text().trim(),
       prompt,
       response: result.response.text(),
-      successStory: successStoryResult.response.text(),  // Add the success story to the chat data
+      successStory: successStoryResult.response.text(), 
     });
 
     await chat.save();

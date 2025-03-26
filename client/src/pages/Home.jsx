@@ -82,7 +82,7 @@ function Home() {
               <TypingEffect
                 text={["Welcome to RelateAI"]}
                 speed={100}
-                eraseDelay={6000}
+                eraseDelay={60000}
                 cursor={"_"}
                 className="typing-effect"
               />
@@ -150,7 +150,7 @@ function Home() {
               ) : (
                 <div className="flex flex-col items-center justify-center w-full h-full">
                   <img src={NoDataImage} alt="No Data Available" className="w-1/3 mb-4"/>
-                  <p className="text-gray-500 text-lg">You still have no chat</p>
+                  <p className="text-gray-500 text-lg">Oops! You have no chat!</p>
                 </div>
               )}
             </div>

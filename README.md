@@ -11,13 +11,10 @@
 
 Below are some screenshots showcasing the application interface and functionality:
 
-| Screenshot 1     | Screenshot 2     | Screenshot 3     |
-| ---------------- | ---------------- | ---------------- |
 | ![Screenshot 1](screenshots/1.JPG) | ![Screenshot 2](screenshots/2.JPG) | ![Screenshot 3](screenshots/3.JPG) |
-| Screenshot 4     | Screenshot 5     | Screenshot 6     |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
 | ![Screenshot 4](screenshots/4.JPG) | ![Screenshot 5](screenshots/5.JPG) | ![Screenshot 6](screenshots/6.JPG) |
-| Screenshot 7     | Screenshot 8     |                  |
-| ![Screenshot 7](screenshots/7.JPG) | ![Screenshot 8](screenshots/8.JPG) |                  |
+| ![Screenshot 7](screenshots/7.JPG) | ![Screenshot 8](screenshots/8.JPG) |                                  |
 
 ## Technologies Used
 
@@ -26,6 +23,8 @@ Below are some screenshots showcasing the application interface and functionalit
 
 ## Installation
 
+Follow the steps below to get the project running locally:
+
 1. Clone the repository:
 
     ```bash
@@ -33,19 +32,33 @@ Below are some screenshots showcasing the application interface and functionalit
     cd RelateAI
     ```
 
-2. Install the dependencies:
+2. Navigate to the client directory and install dependencies:
 
     ```bash
+    cd client
     npm install
     ```
 
-3. Set up the environment variables in `.env` file.
+3. Run the client in development mode:
 
-4. Run the application:
+    ```bash
+    npm run dev
+    ```
+
+4. Open a new terminal window, navigate to the API directory, and install the dependencies:
+
+    ```bash
+    cd api
+    npm install
+    ```
+
+5. Start the backend server:
 
     ```bash
     npm start
     ```
+
+Now the application should be running, with the client on one terminal and the API on another.
 
 ## License
 
